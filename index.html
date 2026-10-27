@@ -19,7 +19,7 @@ button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}butto
 .brand{display:flex;align-items:center;gap:12px;min-width:0}.brand-symbol{height:40px;width:40px;border:1px solid var(--edge);border-radius:14px;display:grid;place-items:center;background:rgba(83,154,229,.13);box-shadow:0 0 28px #66d8ff28;font-size:24px}.brand small{display:block;color:#b4ceef;text-transform:uppercase;letter-spacing:.19em;font-size:10px;font-weight:700}.brand h1{font-weight:750;font-size:clamp(16px,1.65vw,24px);line-height:1.15;margin:3px 0 0;text-shadow:0 2px 20px #050b20}
 .header-right{display:flex;gap:12px;align-items:center;pointer-events:auto}
 .stars{display:flex;gap:5px;align-items:center;padding:9px 14px;border:1px solid var(--edge);border-radius:15px;background:rgba(10,22,49,.54);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
-.star{font-size:25px;line-height:1;color:rgba(196,211,243,.38);filter:grayscale(1);transition:transform .35s,color .35s,text-shadow .35s}.star.earned{filter:none;color:#ffd96d;text-shadow:0 0 16px rgba(255,212,66,.8);transform:scale(1.13)}
+.star{font-size:23px;line-height:1;color:rgba(196,211,243,.38);filter:grayscale(1);transition:transform .35s,color .35s,text-shadow .35s}.star.earned{filter:none;color:#ffd96d;text-shadow:0 0 16px rgba(255,212,66,.8);transform:scale(1.13)}
 .restart{border-radius:14px;border:1px solid var(--edge);background:rgba(13,29,58,.6);color:#ecf8ff;padding:12px 17px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);font-weight:700}.restart:hover{background:rgba(52,85,145,.68)}
 .question-panel{position:absolute;bottom:clamp(18px,4vh,50px);left:clamp(18px,3.5vw,60px);width:clamp(350px,36vw,590px);max-height:calc(100dvh - 128px);overflow-y:auto;padding:clamp(21px,2.15vw,32px);border:1px solid rgba(156,223,255,.28);border-radius:25px;background:linear-gradient(135deg,rgba(11,27,55,.76),rgba(25,23,64,.63));box-shadow:0 22px 70px rgba(1,4,20,.45),inset 0 1px rgba(255,255,255,.13);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);pointer-events:auto}
 .question-panel[hidden],.victory[hidden]{display:none!important}
@@ -35,7 +35,7 @@ button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}butto
 .answer.correct .letter{background:#1a9d63;color:#fff}.answer.wrong .letter{background:#b7355d;color:#fff}
 .feedback{min-height:26px;margin:17px 0 0;font-weight:750;color:#a5f6c0}.feedback.error{color:#ffb0c0}.feedback:empty{margin-top:8px;min-height:0}
 .victory{position:absolute;left:clamp(18px,3.5vw,60px);bottom:clamp(18px,4vh,50px);width:min(520px,calc(100vw - 36px));padding:clamp(26px,3vw,45px);border:1px solid #b9eaff75;border-radius:27px;background:linear-gradient(145deg,rgba(10,31,65,.85),rgba(44,25,87,.78));backdrop-filter:blur(25px);-webkit-backdrop-filter:blur(25px);box-shadow:0 25px 85px #050a25aa;pointer-events:auto;text-align:center}
-.victory .bigstars{font-size:48px;letter-spacing:8px;color:#ffdc78;text-shadow:0 0 20px #fdbb5799;animation:appear .5s ease both}
+.victory .bigstars{font-size:clamp(30px,4vw,48px);letter-spacing:4px;color:#ffdc78;text-shadow:0 0 20px #fdbb5799;animation:appear .5s ease both}
 .victory h2{font-size:clamp(28px,3.2vw,44px);margin:15px 0 10px}.victory p{color:#dbe7ff;font-size:18px;line-height:1.5}.again{margin-top:14px;padding:15px 24px;background:linear-gradient(95deg,#65d7f7,#a68eff);color:#07142c;border:0;border-radius:15px;font-weight:850;box-shadow:0 7px 27px #7b9cff55}.again:hover{filter:brightness(1.12)}
 .orbit{position:absolute;z-index:3;right:9%;bottom:13%;width:130px;aspect-ratio:1;border-radius:50%;border:1px solid rgba(128,231,255,.18);box-shadow:0 0 55px #68cfff19;pointer-events:none;opacity:.5;animation:float 7s ease-in-out infinite}
 @keyframes float{50%{transform:translateY(-18px)}}@keyframes appear{from{opacity:0;transform:scale(.78)}to{opacity:1;transform:scale(1)}}
@@ -55,25 +55,25 @@ button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}butto
 <main class="hud">
   <header class="header">
     <div class="brand"><span class="brand-symbol" aria-hidden="true">⚛</span><div><small>Тренажёр исследователя</small><h1>Математическая лаборатория</h1></div></div>
-    <div class="header-right"><div class="stars" id="stars" aria-label="Собрано звёзд: 0 из 3"><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span></div><button type="button" class="restart" id="restart">↻ Начать заново</button></div>
+    <div class="header-right"><div class="stars" id="stars" aria-label="Собрано звёзд: 0 из 5"><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span></div><button type="button" class="restart" id="restart">↻ Начать заново</button></div>
   </header>
   <section class="question-panel" id="questionPanel" aria-label="Игровой вопрос">
-    <div class="panel-top"><span>Миссия · Вычисления</span><span class="level-tag" id="questionNumber">01 / 03</span></div>
-    <div class="progress" id="progress" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="panel-top"><span>Миссия · Вычисления</span><span class="level-tag" id="questionNumber">01 / 05</span></div>
+    <div class="progress" id="progress" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
     <h2 id="questionText"></h2>
     <div class="answer-list" id="answers"></div>
     <p class="feedback" id="feedback" role="status" aria-live="polite"></p>
   </section>
   <section class="victory" id="victory" hidden aria-label="Победа">
-    <div class="bigstars" aria-hidden="true">★★★</div>
+    <div class="bigstars" aria-hidden="true">★★★★★</div>
     <h2>ПОЗДРАВЛЯЕМ!</h2>
-    <p>Ты прошел все испытания и собрал три звезды!</p>
+    <p>Ты прошел все испытания и собрал пять звёзд!</p>
     <button type="button" class="again" id="again">Играть снова ✨</button>
   </section>
 </main>
 <script>
 "use strict";
-// Все пять вопросов доступны в пуле. Каждая миссия содержит три случайных вопроса.
+// Каждая миссия содержит все пять вопросов в случайном порядке.
 const questions = [
   {question:"Вычислите: 3,4 + 2,75",answers:["5,15","6,15","6,05"],correctIndex:1},
   {question:"Вычислите: 10 − 4,3",answers:["6,3","6,7","5,7"],correctIndex:2},
@@ -81,7 +81,7 @@ const questions = [
   {question:"Вычислите: 7,2 : 0,8",answers:["0,9","9","90"],correctIndex:1},
   {question:"Масса первого арбуза 4,5 кг, а второго — на 1,25 кг меньше. Какова общая масса двух арбузов?",answers:["5,75 кг","7,75 кг","8,25 кг"],correctIndex:1}
 ];
-const TARGET_STARS = 3;
+const TARGET_STARS = 5;
 const MAX_REACTION_MS = 20000; // Только аварийная страховка; обычное завершение — по ended.
 const videoWelcome = document.getElementById("videoWelcome");
 const videoSuccess = document.getElementById("videoSuccess");
@@ -133,7 +133,7 @@ function drawQuestion() {
   feedbackNode.textContent = "";
   feedbackNode.className = "feedback";
   const item = mission[currentQuestion];
-  questionNumberNode.textContent = String(currentQuestion + 1).padStart(2,"0") + " / 03";
+  questionNumberNode.textContent = String(currentQuestion + 1).padStart(2,"0") + " / " + String(TARGET_STARS).padStart(2,"0");
   questionNode.textContent = item.question;
   answersNode.replaceChildren();
   item.answers.forEach((answer, answerIndex) => {
